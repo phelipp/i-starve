@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "921094603991",
+    "firebase_url": "https://i-starve.firebaseio.com",
+    "project_id": "i-starve",
+    "storage_bucket": "i-starve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921094603991:android:361671f825d34c7142dc92",
+        "android_client_info": {
+          "package_name": "pndtech.com.istarve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921094603991-j9mpdjevrhe4t4oc3q6vv84puh6lucnl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pndtech.com.istarve",
+            "certificate_hash": "4b78b88e05e6a3f1978046e610bd4530e3ed0895"
+          }
+        },
+        {
+          "client_id": "921094603991-bnomd0212sbs8u3oa35j0933k3v2ofhd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAshzpj0KL8E1mA-hxhurWzCFwiwUCVkxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921094603991-bnomd0212sbs8u3oa35j0933k3v2ofhd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

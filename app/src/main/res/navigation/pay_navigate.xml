@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pay_navigate"
+    app:startDestination="@+id/cartFragment">
+
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="pndtech.com.istarve.view.cart.CartFragment"
+        android:label="fragment_pay"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="pndtech.com.istarve.view.pay.PayFragment"
+        android:label="fragment_pay"
+        tools:layout="@layout/fragment_pay" />
+    <fragment
+        android:id="@+id/confirmAddressFragment"
+        android:name="pndtech.com.istarve.view.confirmAddress.ConfirmAddressFragment"
+        android:label="fragment_confirm_address"
+        tools:layout="@layout/fragment_confirm_address" />
+</navigation>
