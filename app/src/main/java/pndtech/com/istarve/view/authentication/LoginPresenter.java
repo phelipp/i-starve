@@ -14,10 +14,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 import pndtech.com.istarve.MainActivity;
 
-public class Login {
+public class LoginPresenter {
     private FirebaseAuth mAuth;
 
-    public Login() {
+    public LoginPresenter() {
         this.mAuth = FirebaseAuth.getInstance();
     }
 
