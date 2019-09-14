@@ -89,36 +89,39 @@ public class LoginPresenter implements LoginContract.Presenter {
             userLogin.setEmail(email);
             userLogin.setPassword(password);
         }
-        if (!userLogin.getEmail().isEmpty() || !userLogin.getPassword().isEmpty())
+        if (!userLogin.getEmail().isEmpty() || !userLogin.getPassword().isEmpty()) {
             loginView.getProgress().setVisibility(View.VISIBLE);
-        mAuth.signInWithEmailAndPassword(userLogin.getEmail(), userLogin.getPassword())
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isComplete()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            assert user != null;
-                            if (user.isEmailVerified()) {
-                                preferenceLogin.save(userLogin);
-                                Intent intent = new Intent(activity.getBaseContext(), MainActivity.class);
-                                activity.startActivity(intent);
+            mAuth.signInWithEmailAndPassword(userLogin.getEmail(), userLogin.getPassword())
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isComplete()) {
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                assert user != null;
+                                if (user.isEmailVerified()) {
+                                    preferenceLogin.save(userLogin);
+                                    Intent intent = new Intent(activity.getBaseContext(), MainActivity.class);
+                                    activity.startActivity(intent);
 
-                                //   Toast.makeText(activity.getBaseContext(), "Direcionando pagina", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(activity.getBaseContext(), "Direcionando pagina", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    preferenceLogin.clear();
+                                    renderLogin(true);
+                                    Toast.makeText(activity, "Verifique seu email para logar", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                preferenceLogin.clear();
+                                // renderLogin(true);
                                 renderLogin(true);
-                                Toast.makeText(activity, "Verifique seu email para logar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "Senha ou email invalido!", Toast.LENGTH_SHORT).show();
+
                             }
-                        } else {
-                            // renderLogin(true);
-                            renderLogin(true);
-                            Toast.makeText(activity, "Senha ou email invalido!", Toast.LENGTH_SHORT).show();
 
                         }
+                    });
 
-                    }
-                });
-
+        } else {
+            renderLogin(true);
+        }
     }
 
     /***
