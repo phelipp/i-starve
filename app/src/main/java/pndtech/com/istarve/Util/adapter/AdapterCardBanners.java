@@ -26,6 +26,14 @@ public class AdapterCardBanners extends RecyclerView.Adapter<AdapterCardBanners.
         this.banners = banners;
     }
 
+    public List<Banner> getBanners() {
+        return banners;
+    }
+
+    public void setBanners(List<Banner> banners) {
+        this.banners = banners;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

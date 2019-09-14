@@ -8,17 +8,17 @@
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="pndtech.com.istarve.view.cart.CartFragment"
+        android:name="pndtech.com.istarve.View.cart.CartFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/payFragment"
-        android:name="pndtech.com.istarve.view.pay.PayFragment"
+        android:name="pndtech.com.istarve.View.pay.PayFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_pay" />
     <fragment
         android:id="@+id/confirmAddressFragment"
-        android:name="pndtech.com.istarve.view.confirmAddress.ConfirmAddressFragment"
+        android:name="pndtech.com.istarve.View.confirmAddress.ConfirmAddressFragment"
         android:label="fragment_confirm_address"
         tools:layout="@layout/fragment_confirm_address" />
 </navigation>

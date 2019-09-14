@@ -7,6 +7,10 @@ public class Banner {
     public Banner() {
     }
 
+    public Banner(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
     public Banner(int id, String urlImage) {
         this.id = id;
         this.urlImage = urlImage;
