@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         root = inflater.inflate(R.layout.fragment_home, container, false);
         homePresenter = new HomePresenter(this.getContext(), this);
         homePresenter.getInstanceRecyclerView(root);
-      
+
 
        // homePresenter.updateProdutos();
         return root;
