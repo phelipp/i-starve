@@ -1,5 +1,5 @@
 package pndtech.com.istarve.Util;
-/*
+
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.TimeoutException;*/
+import java.util.concurrent.TimeoutException;
 
 public class Message {
-    private final String HOST = "localhost";
+    private final String HOST = "192.168.1.3";
     private final int PORT = 5672;
     private final String USERNAME = "istarve";
     private final String PASSWORD = "07092302";
     private final String VIRTUAL_HOST = "";
     private static Message instance;
 
-   /* private String uri ;
+    private String uri ;
 
     private Message() {
         this(null);
@@ -52,6 +52,7 @@ public class Message {
             Channel channel = conn.createChannel();
             channel.queueDeclare(queueRota, false, false, true, null);
             channel.basicPublish("", queueRota, null, msg.getBytes());
+          //  channel.close();
         } catch (IOException e) {
             System.out.print("Erro-01");
             e.printStackTrace();
@@ -70,5 +71,5 @@ public class Message {
 
     public void setUri(String uri) {
         this.uri = uri;
-    }*/
+    }
 }

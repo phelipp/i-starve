@@ -1,17 +1,14 @@
 package pndtech.com.istarve.View.home;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import pndtech.com.istarve.Util.adapter.AdapterCardBanners;
+import pndtech.com.istarve.Util.adapter.AdapterPageBanners;
 
 interface HomeContract {
     interface View {
-        void setInstanceRecycleView(RecyclerView recyclerView);
-        void setAdapter(AdapterCardBanners adapter);
+
+        void setAdapter(AdapterPageBanners adapter);
     }
 
     interface Presenter {
-        void getInstanceRecyclerView(android.view.View view);
-        void updateProdutos();
+       void updataAdapter();
     }
 }

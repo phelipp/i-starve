@@ -1,6 +1,8 @@
 package pndtech.com.istarve.Data;
 
-public class Banner {
+import pndtech.com.istarve.Data.percistence.ObjectPercistence;
+
+public class Banner implements ObjectPercistence {
     private int id;
     private String urlImage;
 
