@@ -1,0 +1,21 @@
+package pndtech.com.istarve.Data.percistence.table;
+
+public class PhoneTable implements Table {
+
+    public final static String TABLE = "phone";
+    public final static String ID_CLIENTE = "_id_cliente";
+    // public final static String ID_ADDRESS = "_id_address";
+    public final static String DDD = "ddd";
+    public final static String NUMBER = "number";
+
+
+    @Override
+    public String sqlCreateTable() {
+
+        return String.format(CREATE_TABLE_BEGIN + ",%s INTEGER,%s TEXT,%s TEXT);", TABLE, ID_CLIENTE, DDD, NUMBER);
+    }
+    @Override
+    public String sqlDropTable() {
+        return String.format(""+DROP_SQL,TABLE);
+    }
+}

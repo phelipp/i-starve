@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
  //   @BindView(R.id.btnLogin)
     private Button btnLogin;
   //  @BindView(R.id.register)
-    private Button register;
+    private TextView register;
  //   @BindView(R.id.progress)
     private ProgressBar progress;
  //   @BindView(R.id.loginLinearlayout)
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     }
 
     @Override
-    public Button getRegister() {
+    public TextView getRegister() {
         return register;
     }
 

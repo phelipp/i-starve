@@ -9,6 +9,7 @@ public class Cliente {
     private String lastName;
     private Phone phone;
     private Address address;
+    private String Cpf;
 
     public int getId() {
         return id;

@@ -16,7 +16,7 @@ interface LoginContract {
 
         Button getBtnLogin();
 
-        Button getRegister();
+        TextView getRegister();
 
         ProgressBar getProgress();
 

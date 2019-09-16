@@ -2,6 +2,7 @@ package pndtech.com.istarve.View.login;
 
 import android.content.Intent;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,9 +41,10 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void register() {
 
-        loginView.getRegister().setOnClickListener(new View.OnClickListener() {
+        loginView.getRegister().setOnTouchListener(new View.OnTouchListener() {
+
             @Override
-            public void onClick(View view) {
+            public boolean onTouch(View view, MotionEvent motionEvent) {
                 String email = loginView.getEmail().getText().toString();
                 String password = loginView.getPassword().getText().toString();
                 Log.i("log", email);
@@ -57,12 +59,14 @@ public class LoginPresenter implements LoginContract.Presenter {
                                     assert user != null;
                                     user.sendEmailVerification();
                                     Toast.makeText(activity, "Confirme seu email !!!", Toast.LENGTH_SHORT).show();
+
                                 } else {
                                     Log.d("erro", task.getException().toString());
                                     Toast.makeText(activity, "Erro ao registrar sua conta !!!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
+                return true;
             }
         });
 
