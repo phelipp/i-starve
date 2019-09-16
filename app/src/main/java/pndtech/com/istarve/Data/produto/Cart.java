@@ -1,6 +1,5 @@
-package pndtech.com.istarve.Data;
+package pndtech.com.istarve.Data.produto;
 
-import java.io.Serializable;
 import java.util.List;
 
 import pndtech.com.istarve.Data.percistence.ObjectPercistence;

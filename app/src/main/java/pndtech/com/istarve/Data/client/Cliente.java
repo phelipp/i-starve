@@ -1,8 +1,5 @@
 package pndtech.com.istarve.Data.client;
 
-import pndtech.com.istarve.Data.information.Address;
-import pndtech.com.istarve.Data.information.Phone;
-
 public class Cliente {
     private int id;
     private String name;
@@ -10,6 +7,14 @@ public class Cliente {
     private Phone phone;
     private Address address;
     private String Cpf;
+
+    public String getCpf() {
+        return Cpf;
+    }
+
+    public void setCpf(String cpf) {
+        Cpf = cpf;
+    }
 
     public int getId() {
         return id;

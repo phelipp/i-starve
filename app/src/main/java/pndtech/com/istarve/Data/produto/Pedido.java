@@ -1,8 +1,9 @@
-package pndtech.com.istarve.Data;
+package pndtech.com.istarve.Data.produto;
 
 import java.util.Calendar;
 import java.util.List;
 
+import pndtech.com.istarve.Data.ModoPagamento;
 import pndtech.com.istarve.Data.client.Cliente;
 
 public class Pedido {

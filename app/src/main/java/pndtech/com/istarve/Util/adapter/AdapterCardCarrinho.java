@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import pndtech.com.istarve.R;
-import pndtech.com.istarve.Data.Item;
+import pndtech.com.istarve.Data.produto.Item;
 import pndtech.com.istarve.Util.Formats;
 
 public class AdapterCardCarrinho extends RecyclerView.Adapter<AdapterCardCarrinho.MyViewHolder> {

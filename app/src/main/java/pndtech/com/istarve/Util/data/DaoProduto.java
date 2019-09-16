@@ -9,7 +9,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import pndtech.com.istarve.Data.Produto;
+import pndtech.com.istarve.Data.produto.Produto;
 
 public class DaoProduto {
     public final static String NODE = "Produto";

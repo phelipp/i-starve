@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import pndtech.com.istarve.Data.Produto;
+import pndtech.com.istarve.Data.produto.Produto;
 import pndtech.com.istarve.R;
 import pndtech.com.istarve.Util.adapter.AdapterCardLoja;
 
