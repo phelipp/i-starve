@@ -2,7 +2,7 @@ package pndtech.com.istarve.Data.percistence.table;
 
 
 public class CartTable implements Table {
-    private static final String TABLE = "cart";
+    public static final String TABLE = "cart";
 
     @Override
     public String sqlCreateTable() {

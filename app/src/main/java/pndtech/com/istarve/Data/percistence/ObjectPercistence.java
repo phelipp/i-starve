@@ -1,6 +1,14 @@
 package pndtech.com.istarve.Data.percistence;
 
-import java.io.Serializable;
+import android.content.ContentValues;
+import android.database.Cursor;
 
-public interface ObjectPercistence extends Serializable {
+import java.io.Serializable;
+import java.util.List;
+
+import pndtech.com.istarve.Data.percistence.table.ProdutoTable;
+
+public interface ObjectPercistence <E extends ObjectPercistence> extends Serializable {
+     ContentValues toContentValues() ;
+     List< E> getCursorToObject(Cursor cursor);
 }

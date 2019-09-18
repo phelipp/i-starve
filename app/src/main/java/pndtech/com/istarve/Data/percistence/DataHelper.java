@@ -17,7 +17,8 @@ import pndtech.com.istarve.Data.percistence.table.StateTable;
 import pndtech.com.istarve.Data.percistence.table.Table;
 
 public class DataHelper extends SQLiteOpenHelper {
-    private static final String NOME_BANCO = "banco.db";
+    public static final String NOME_BANCO = "banco.db";
+    public static final int VERSAO = 1;
     public  static Table tableCart,
             tablePedido,
             tablePhone,
@@ -26,7 +27,6 @@ public class DataHelper extends SQLiteOpenHelper {
             tableItem,
             tableCliente,
             tableProduto;
-    private static final int VERSAO = 1;
     private StringBuffer sql = new StringBuffer();
     private StringBuffer sqlDrop = new StringBuffer();
 

@@ -5,8 +5,7 @@ import pndtech.com.istarve.Data.percistence.ObjectPercistence;
 public class AddressTable implements Table {
 
     public final static String TABLE = "address";
-    public final static String ID_CLIENTE = "_id_cliente";
-    public final static String ID_STATE = "_id_state";
+    public final static String FK_STATE = "_fk_state";
     public final static String STREET = "street";
     public final static String NUMBER = "number";
     public final static String NEIGHBORHOOD = "neighborhood";
@@ -16,8 +15,11 @@ public class AddressTable implements Table {
 
     @Override
     public String sqlCreateTable() {
-        return String.format(CREATE_TABLE_BEGIN + ",%s INTEGER,%s INTEGER,%s TEXT,%s INTEGER,%s TEXT,%s TEXT, %s TEXT)",
-                TABLE, ID_CLIENTE, ID_STATE, STREET, NUMBER, NEIGHBORHOOD, CITY, ZIP_CODE);
+        return String.format(CREATE_TABLE_BEGIN + ",%s INTEGER,%s TEXT,%s INTEGER,%s TEXT,%s TEXT, %s TEXT," +
+                        "foreing key (%s) references %s(%s)",
+                TABLE,  FK_STATE, STREET, NUMBER, NEIGHBORHOOD, CITY, ZIP_CODE,
+                FK_STATE,StateTable.TABLE,ID
+                );
     }
 
     @Override
