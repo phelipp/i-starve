@@ -10,6 +10,7 @@ import java.util.List;
 import pndtech.com.istarve.Data.percistence.ObjectPercistence;
 import pndtech.com.istarve.Data.percistence.table.ItemTable;
 import pndtech.com.istarve.Data.percistence.table.ProdutoTable;
+import pndtech.com.istarve.Data.percistence.table.Table;
 
 public class Item implements ObjectPercistence {
     private int id;
@@ -59,28 +60,34 @@ public class Item implements ObjectPercistence {
         contentValues.put(ItemTable.ID, this.id);
         contentValues.put(ItemTable.FK_PRODUTO, this.getProduto().getId());
         contentValues.put(ItemTable.AMOUNT, this.amount);
-       
+
         return contentValues;
     }
 
     @Override
-    public List<Produto> getCursorToObject(Cursor cursor) {
-        List<Produto> produtos = new ArrayList<>();
+    public List<Item> getCursorToObject(Cursor cursor) {
+        List<Item> itens = new ArrayList<>();
         cursor.moveToFirst();
-        int indexId = cursor.getColumnIndex(ProdutoTable.ID);
-        int indexName = cursor.getColumnIndex(ProdutoTable.NAME);
-        int indexValue = cursor.getColumnIndex(ProdutoTable.VALUE);
-        int indexDescription = cursor.getColumnIndex(ProdutoTable.DESCRIPTION);
-        int indexImage = cursor.getColumnIndex(ProdutoTable.IMAGE_URL);
+        int indexId = cursor.getColumnIndex(Table.ID);
+        int indexAmout = cursor.getColumnIndex(ItemTable.AMOUNT);
+        int indexIdProduto = cursor.getColumnIndex(ProdutoTable.ID);
+        int indexNameProduto = cursor.getColumnIndex(ProdutoTable.NAME);
+        int indexValueProduto = cursor.getColumnIndex(ProdutoTable.VALUE);
+        int indexDescriptionProduto = cursor.getColumnIndex(ProdutoTable.DESCRIPTION);
+        int indexImageProduto = cursor.getColumnIndex(ProdutoTable.IMAGE_URL);
         while (cursor.moveToNext()) {
+            Item item = new Item();
+            item.setId(cursor.getInt(indexId));
+            item.setAmount(cursor.getInt(indexAmout));
             Produto produto =new Produto();
-            produto.setId(cursor.getInt(indexId));
-            produto.setName(cursor.getString(indexName));
-            produto.setValue(cursor.getFloat(indexValue));
-            produto.setDescription(cursor.getString(indexDescription));
-            produto.setImageUrl(cursor.getString(indexImage));
-            produtos.add(produto);
+            produto.setId(cursor.getInt(indexIdProduto));
+            produto.setName(cursor.getString(indexNameProduto));
+            produto.setValue(cursor.getFloat(indexValueProduto));
+            produto.setDescription(cursor.getString(indexDescriptionProduto));
+            produto.setImageUrl(cursor.getString(indexImageProduto));
+            item.setProduto(produto);
+            itens.add(item);
         }
-        return produtos;
+        return itens;
     }
 }
