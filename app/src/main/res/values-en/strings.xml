@@ -16,6 +16,10 @@
 
     <string name="hint_email">E-mail</string>
     <string name="hint_senha">Password</string>
+    <string name="hint_nome">Name</string>
+    <string name="hint_cpf">CPF</string>
+    <string name="hint_telefone">Phone</string>
+
 
     <string name="text_registrar">Register</string>
 
